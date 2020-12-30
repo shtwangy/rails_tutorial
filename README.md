@@ -59,3 +59,15 @@ $ bundle init
 $ bundle install --path vendor/bundle
 $ rails new .
 ```
+
+`yarn`インストール
+```
+$ brew install yarn
+$ yarn -v
+$ yarn install
+```
+
+`webpacker`インストール
+```
+$ rails webpacker:install
+```
