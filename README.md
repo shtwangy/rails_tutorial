@@ -71,3 +71,14 @@ $ yarn install
 ```
 $ rails webpacker:install
 ```
+
+# MVCモデルについて
+- Model：DB関連の処理を担当
+- View：画面表示（HTML）を担当
+- Controller：リクエスト受付 & レスポンスの返却
+
+# 命名規則
+- class: upper camel case
+- other: snake case
+
+※例外として定数は全て大文字
