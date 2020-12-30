@@ -82,3 +82,18 @@ $ rails webpacker:install
 - other: snake case
 
 ※例外として定数は全て大文字
+
+# Setup DB
+```
+$ rails g model User name:string age:integer
+$ rails db:create
+$ rails db:migrate
+```
+
+DB作成の確認
+```
+$ sqlite3 db/development.sqlite3
+sqlite> .schema users
+```
+
+
