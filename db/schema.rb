@@ -13,10 +13,11 @@
 ActiveRecord::Schema.define(version: 2020_12_30_162850) do
 
   create_table "users", force: :cascade do |t|
-    t.string "name"
+    t.string "name", limit: 128, null: false
     t.integer "age"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["name"], name: "index_users_on_name"
   end
 
 end
