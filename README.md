@@ -101,4 +101,45 @@ DB削除
 $ rails db:drop
 ```
 
+レコード挿入
+```
+$ rails c
+irb(main):001:0> User.create!(name: "Buddy Guy", age: 84)
+```
+
+レコード検索
+```
+irb(main):001:0> User.all
+
+irb(main):002:0> user = User.find(1)
+  User Load (0.2ms)  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?  [["id", 1], ["LIMIT", 1]]
+=> #<User id: 1, name: "Buddy Guy", age: 84, created_at: "2020-12-30 16:44:23.304296000 +0000", updated_at: "2020-12-30 16:44:23.304296000 +0000">
+irb(main):003:0> user.age
+=> #<User id: 1, name: "Buddy Guy", age: 84, created_at: "2020-12-30 16:44:23.304296000 +0000", updated_at: "2020-12-30 16:44:23.304296000 +0000">
+irb(main):004:0> user.age
+=> 84
+irb(main):005:0> user.name
+=> "Buddy Guy"
+irb(main):006:0> user.id
+=> 1
+irb(main):007:0> user.created_at
+=> Wed, 30 Dec 2020 16:44:23.304296000 UTC +00:00
+
+irb(main):033:0> User.where("age>=80")
+  User Load (0.2ms)  SELECT "users".* FROM "users" WHERE (age>=80) /* loading for inspect */ LIMIT ?  [["LIMIT", 11]]
+=> #<ActiveRecord::Relation [#<User id: 1, name: "Buddy Guy", age: 84, created_at: "2020-12-30 16:44:23.304296000 +0000", updated_at: "2020-12-30 16:54:29.403306000 +0000">]>
+```
+
+レコード更新
+```
+irb(main):022:0> user.name = "rename"
+=> "rename"
+irb(main):023:0> user
+=> #<User id: 1, name: "rename", age: 84, created_at: "2020-12-30 16:44:23.304296000 +0000", updated_at: "2020-12-30 16:44:23.304296000 +0000">
+irb(main):025:0> user.save
+  TRANSACTION (0.1ms)  begin transaction
+  User Update (0.4ms)  UPDATE "users" SET "name" = ?, "updated_at" = ? WHERE "users"."id" = ?  [["name", "rename"], ["updated_at", "2020-12-30 16:53:45.174732"], ["id", 1]]
+  TRANSACTION (0.7ms)  commit transaction
+=> true
+```
 
