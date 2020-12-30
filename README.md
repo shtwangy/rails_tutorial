@@ -96,4 +96,9 @@ $ sqlite3 db/development.sqlite3
 sqlite> .schema users
 ```
 
+DB削除
+```
+$ rails db:drop
+```
+
 
