@@ -152,3 +152,13 @@ $ rails routes
 $ rails routes | grep user
 ```
 
+# Create CRUD
+```
+$ rails g scaffold WeightHistory user:references weight:integer memo:string
+$ rails db:migrate
+```
+
+```
+$ rails routes | grep weight
+```
+
