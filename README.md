@@ -162,3 +162,6 @@ $ rails db:migrate
 $ rails routes | grep weight
 ```
 
+# Active Record Callback
+https://railsguides.jp/active_record_callbacks.html
+
