@@ -147,4 +147,8 @@ irb(main):025:0> user.save
 ```
 $ rails routes
 ```
+絞り込み
+```
+$ rails routes | grep user
+```
 
