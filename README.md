@@ -199,3 +199,13 @@ exit
 [1] pry(#<TweetsController>)>exit
 ```
 
+# Seed
+開発用のテストデータを作成する
+```db/seeds.rb
+User.create!(name: "Buddy Guy", age: 84)
+User.create!(name: "Eric Clapton", age: 75)
+```
+```
+$ rails db:seed
+```
+
