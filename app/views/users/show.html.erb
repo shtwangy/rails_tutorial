@@ -1,7 +1,9 @@
 <h1>ユーザー詳細</h1>
 
 <%= @user.name %><br>
-<%= @user.age %>才
+<%= @user.age %>才<br>
+
+<%= link_to '一覧に戻る', users_path %>
 
 <h2>出力テスト</h2>
 <% @user.name %>
@@ -11,3 +13,4 @@
 <% if true %>
   <%= @user.name %>
 <% end %>
+
