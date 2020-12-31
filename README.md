@@ -143,3 +143,8 @@ irb(main):025:0> user.save
 => true
 ```
 
+# Check Routing
+```
+$ rails routes
+```
+
