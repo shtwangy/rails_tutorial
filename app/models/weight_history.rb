@@ -22,7 +22,7 @@ class WeightHistory < ApplicationRecord
   end
 
   def set_memo
-    if memo.nil?
+    if memo.nil? || memo == ''
       self.memo = "なし" # 代入の時は'self.'が必要
     end
   end
