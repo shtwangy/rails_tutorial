@@ -165,3 +165,37 @@ $ rails routes | grep weight
 # Active Record Callback
 https://railsguides.jp/active_record_callbacks.html
 
+# Debug
+```Gemfile
+gem 'pry-rails'
+```
+
+```
+$ bundle install
+```
+
+Use
+```weight_history.rb
+  def set_memo
+    if memo.nil? || memo == ''
+      self.memo = "なし" # 代入の時は'self.'が必要
+    end
+    binding.pry
+  end
+```
+
+```
+    24: def set_memo
+    25:   if memo.nil? || memo == ''
+    26:     self.memo = "なし" # 代入の時は'self.'が必要
+    27:   end
+ => 28:   binding.pry
+    29: end
+
+[1] pry(#<WeightHistory>)> 
+```
+exit
+```
+[1] pry(#<TweetsController>)>exit
+```
+
