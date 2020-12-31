@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_30_162850) do
+ActiveRecord::Schema.define(version: 2020_12_31_155750) do
 
   create_table "users", force: :cascade do |t|
     t.string "name", limit: 128, null: false
@@ -20,4 +20,14 @@ ActiveRecord::Schema.define(version: 2020_12_30_162850) do
     t.index ["name"], name: "index_users_on_name"
   end
 
+  create_table "weight_histories", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.integer "weight"
+    t.string "memo"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_weight_histories_on_user_id"
+  end
+
+  add_foreign_key "weight_histories", "users"
 end
